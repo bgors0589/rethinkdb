@@ -542,11 +542,11 @@ exports.findHistorial = async (req, res) => {
 };
 
 exports.updateHistorial = async (req, res) => {
-	var busqueda = {
-		idConductor: req.body.idConductor,
-		fecha: req.body.fecha,
-		horaInicio: req.body.hora,
-	};
+	// var busqueda = {
+	// 	idConductor: req.body.idConductor,
+	// 	fecha: req.body.fecha,
+	// 	horaInicio: req.body.hora,
+	// };
 	var actualizar = {
 		estado: req.body.estado,
 	};
@@ -560,7 +560,7 @@ exports.updateHistorial = async (req, res) => {
 	}
 	r.db("domi")
 		.table("historial")
-		.filter(busqueda)
+		.filter({ id: req.body.id })
 		.update(actualizar)
 		.run(connection, function (err, result) {
 			if (err) throw err;
