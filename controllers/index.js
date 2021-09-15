@@ -587,7 +587,7 @@ exports.Hora = async (req, res) => {
 	let h = addZero(date.getHours());
 	let m = addZero(date.getMinutes());
 	let hora = h + ":" + m;
-	let fecha = `${day}-${month}-${year}`;
+	let fecha = `${month}-${day}-${year}`;
 
 	let entrega = {
 		hora,
